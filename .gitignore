@@ -1,0 +1,28 @@
+# App artifacts
+/Backend/food_service/_build
+/Backend/food_service/db
+/Backend/food_service/deps
+/Backend/food_service/*.ez
+
+# Generated on crash by the VM
+/Backend/food_service/erl_crash.dump
+
+# Generated on crash by NPM
+/Backend/food_service/npm-debug.log
+
+# Static artifacts
+/Backend/food_service/assets/node_modules
+
+# Since we are building assets from assets/,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/Backend/food_service/priv/static/
+
+# Files matching config/*.secret.exs pattern contain sensitive
+# data and you should not commit them into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets files as long as you replace their contents by environment
+# variables.
+/Backend/food_service/config/*.secret.exs
+/Backend/food_service/.idea
