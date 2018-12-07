@@ -38,7 +38,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = collectionView.indexPathsForSelectedItems?.first
         if segue.identifier == "FoodByTypeSegue" {
-            if let dest = segue.destination as? FoodListByTypeViewController {
+            if let dest = segue.destination as? FoodListByTypeViewController {//,
+                //let index = sender as? IndexPath {
+                //dest.selection = collectionData[index.row]
                 dest.collectionData = collectionData[cell!.row].foodList
             }
         }

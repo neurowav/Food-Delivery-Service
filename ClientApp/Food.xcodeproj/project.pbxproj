@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4B4E0221B68C88009AFA71 /* ProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4E0121B68C88009AFA71 /* ProviderViewController.swift */; };
 		3F9BF83921AD520D00B1E441 /* FoodListByTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF83821AD520D00B1E441 /* FoodListByTypeViewController.swift */; };
 		C6F9E59421AC8C29005B3250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F9E59321AC8C29005B3250 /* AppDelegate.swift */; };
 		C6F9E59621AC8C29005B3250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F9E59521AC8C29005B3250 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F4B4E0121B68C88009AFA71 /* ProviderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderViewController.swift; sourceTree = "<group>"; };
 		3F9BF83821AD520D00B1E441 /* FoodListByTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListByTypeViewController.swift; sourceTree = "<group>"; };
 		C6F9E59021AC8C29005B3250 /* Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F9E59321AC8C29005B3250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				3F9BF83821AD520D00B1E441 /* FoodListByTypeViewController.swift */,
 				C6F9E5A821AC93D6005B3250 /* DetailsViewController.swift */,
 				C6F9E59721AC8C29005B3250 /* Main.storyboard */,
+				3F4B4E0121B68C88009AFA71 /* ProviderViewController.swift */,
 				C6F9E59D21AC8C2D005B3250 /* Assets.xcassets */,
 				C6F9E59F21AC8C2D005B3250 /* LaunchScreen.storyboard */,
 				C6F9E5A221AC8C2D005B3250 /* Info.plist */,
@@ -147,6 +150,7 @@
 				3F9BF83921AD520D00B1E441 /* FoodListByTypeViewController.swift in Sources */,
 				C6F9E59621AC8C29005B3250 /* ViewController.swift in Sources */,
 				C6F9E59421AC8C29005B3250 /* AppDelegate.swift in Sources */,
+				3F4B4E0221B68C88009AFA71 /* ProviderViewController.swift in Sources */,
 				C6F9E59C21AC8C29005B3250 /* Food.xcdatamodeld in Sources */,
 				C6F9E5A921AC93D6005B3250 /* DetailsViewController.swift in Sources */,
 			);

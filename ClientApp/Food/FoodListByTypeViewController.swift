@@ -12,7 +12,7 @@ class FoodListByTypeViewController: UIViewController {
 
     @IBOutlet private weak var collectionView : UICollectionView!
 
-    var collectionData = ["Chicken", "Beefy"] //updates with new values when concrete cell is taped
+    var collectionData = ["Chicken", "Beefy"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ extension FoodListByTypeViewController: UICollectionViewDelegate, UICollectionVi
         }
         return cell
     }
-    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //    performSegue(withIdentifier: "DetailsViewSegue", sender: indexPath)
-    //}
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "DetailsViewSegue", sender: indexPath)
+//    }
 }
