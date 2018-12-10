@@ -15,7 +15,7 @@ class ProviderViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var comments = ["Good provider", "Nice", "The best"]
+    var comments = ["Good provider, the pizza was awesome. Wait for another order", "Nice", "The best"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,10 @@ class ProviderViewController: UIViewController {
     {
         print("The comment was sent")
         inputText.resignFirstResponder()
+        comments.append(inputText.text!)
+        collectionView.reloadData()
+        inputText.text?.removeAll()
+        print(comments)
     }
     
     @IBAction func endComment(_ sender: Any) {
@@ -46,7 +50,7 @@ class ProviderViewController: UIViewController {
     }
     
     @objc func keyboardWillChange(notification: Notification) {
-        print("Keyboard will show: \(notification.name.rawValue)")
+        //print("Keyboard will show: \(notification.name.rawValue)")
         
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
@@ -64,8 +68,8 @@ class ProviderViewController: UIViewController {
 extension ProviderViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
-        if let label = cell.viewWithTag(100) as? UILabel {
-            label.text = comments[indexPath.row]
+        if let textView = cell.viewWithTag(100) as? UITextView {
+            textView.text = comments[indexPath.row]
         }
         return cell
     }

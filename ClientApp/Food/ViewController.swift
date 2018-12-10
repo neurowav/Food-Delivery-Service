@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     
     var collectionData : [Food] = [Food(type: "🍗", foodList: ["Chicken", "Beefy"]), Food(type: "🍔", foodList: ["Big Mac", "Burger"]), Food(type: "🥤", foodList: ["Cola", "Fanta", "Beer"]), Food(type: "🥣", foodList: ["Soup", "Sauce"])]
     
-    //var collectionData = ["🍗", "🍔", "🥤", "🥣"]
+    //private var appDelegate	= UIApplication.shared.delegate as! AppDelegate
+    //private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
