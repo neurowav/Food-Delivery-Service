@@ -43,6 +43,8 @@ defmodule FoodService.Mixfile do
       {:corsica, "~> 1.1"},
       {:cowboy, "~> 1.0"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:ecto_enum, "~> 1.0"},
+      {:event_bus, "~> 1.6.0"},
       {:guardian, "~> 1.1"},
       {:gettext, "~> 0.11"},
       {:httpoison, "~> 0.13"},

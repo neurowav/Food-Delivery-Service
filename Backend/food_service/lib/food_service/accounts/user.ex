@@ -62,8 +62,6 @@ defmodule FoodService.Accounts.User do
     user
     |> cast(attrs, @required ++ @optional)
     |> validate_required(@required)
-    |> cast_assoc(:photo)
-    |> assoc_constraint(:city)
     |> unique_email
     |> unique_constraint(:id, name: :users_pkey)
     |> validate_password(:password)

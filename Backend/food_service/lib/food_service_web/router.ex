@@ -12,16 +12,14 @@ defmodule FoodServiceWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug ProperCase.Plug.SnakeCaseParams
   end
 
   pipeline :user_api do
     plug :accepts, ["json"]
-    plug ProperCase.Plug.SnakeCaseParams
   end
 
   pipeline :user_auth do
-    plug DomianApi.Accounts.Guardian.Pipeline
+    plug FoodService.Accounts.Guardian.Pipeline
   end
 
   pipeline :ensure_auth do
@@ -32,10 +30,11 @@ defmodule FoodServiceWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", FoodServiceWeb do
-    pipe_through [:api, :user_auth, :ensure_auth]
+  scope "/", FoodServiceWeb do
+    pipe_through [:api] #, :user_auth, :ensure_auth]
 
-    resources "/orders", OrderController, only: [:index, :show, :create, :update]
+    resources "/inventory", InventoryController, only: [:index]
+    resources "/orders", OrderController, only: [:index, :create, :update]
     get "/", PageController, :index
   end
 

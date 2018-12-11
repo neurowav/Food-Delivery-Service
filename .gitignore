@@ -26,3 +26,4 @@
 # variables.
 /Backend/food_service/config/*.secret.exs
 /Backend/food_service/.idea
+/Backend/food_service/uploads

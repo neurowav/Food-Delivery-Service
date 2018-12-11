@@ -1,5 +1,5 @@
 defmodule FoodService.Accounts.Guardian do
-  use Guardian, otp_app: :domian_api
+  use Guardian, otp_app: :food_service
 
   alias FoodService.Accounts
   alias FoodService.Accounts.User
