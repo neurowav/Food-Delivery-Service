@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3A7B6721BFE5DD00E47ED8 /* Inventory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B5F21BFE5DD00E47ED8 /* Inventory+CoreDataClass.swift */; };
+		3F3A7B6821BFE5DD00E47ED8 /* Inventory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6021BFE5DD00E47ED8 /* Inventory+CoreDataProperties.swift */; };
+		3F3A7B6921BFE5DD00E47ED8 /* Provider+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6121BFE5DD00E47ED8 /* Provider+CoreDataClass.swift */; };
+		3F3A7B6A21BFE5DD00E47ED8 /* Provider+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6221BFE5DD00E47ED8 /* Provider+CoreDataProperties.swift */; };
+		3F3A7B6B21BFE5DD00E47ED8 /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6321BFE5DD00E47ED8 /* Order+CoreDataClass.swift */; };
+		3F3A7B6C21BFE5DD00E47ED8 /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6421BFE5DD00E47ED8 /* Order+CoreDataProperties.swift */; };
+		3F3A7B6D21BFE5DD00E47ED8 /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6521BFE5DD00E47ED8 /* Comment+CoreDataClass.swift */; };
+		3F3A7B6E21BFE5DD00E47ED8 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A7B6621BFE5DD00E47ED8 /* Comment+CoreDataProperties.swift */; };
 		3F4B4E0221B68C88009AFA71 /* ProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B4E0121B68C88009AFA71 /* ProviderViewController.swift */; };
 		3F9BF83921AD520D00B1E441 /* FoodListByTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF83821AD520D00B1E441 /* FoodListByTypeViewController.swift */; };
-		C6F7B51A21BC207100F8BB00 /* Dish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F7B51621BC207100F8BB00 /* Dish+CoreDataClass.swift */; };
-		C6F7B51B21BC207100F8BB00 /* Dish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F7B51721BC207100F8BB00 /* Dish+CoreDataProperties.swift */; };
-		C6F7B51C21BC207100F8BB00 /* Provider+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F7B51821BC207100F8BB00 /* Provider+CoreDataClass.swift */; };
-		C6F7B51D21BC207100F8BB00 /* Provider+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F7B51921BC207100F8BB00 /* Provider+CoreDataProperties.swift */; };
 		C6F9E59421AC8C29005B3250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F9E59321AC8C29005B3250 /* AppDelegate.swift */; };
 		C6F9E59621AC8C29005B3250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F9E59521AC8C29005B3250 /* ViewController.swift */; };
 		C6F9E59921AC8C29005B3250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F9E59721AC8C29005B3250 /* Main.storyboard */; };
@@ -23,12 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F3A7B5F21BFE5DD00E47ED8 /* Inventory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F3A7B6021BFE5DD00E47ED8 /* Inventory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3F3A7B6121BFE5DD00E47ED8 /* Provider+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F3A7B6221BFE5DD00E47ED8 /* Provider+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3F3A7B6321BFE5DD00E47ED8 /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F3A7B6421BFE5DD00E47ED8 /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3F3A7B6521BFE5DD00E47ED8 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F3A7B6621BFE5DD00E47ED8 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F4B4E0121B68C88009AFA71 /* ProviderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderViewController.swift; sourceTree = "<group>"; };
 		3F9BF83821AD520D00B1E441 /* FoodListByTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListByTypeViewController.swift; sourceTree = "<group>"; };
-		C6F7B51621BC207100F8BB00 /* Dish+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C6F7B51721BC207100F8BB00 /* Dish+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C6F7B51821BC207100F8BB00 /* Provider+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C6F7B51921BC207100F8BB00 /* Provider+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C6F9E59021AC8C29005B3250 /* Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F9E59321AC8C29005B3250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F9E59521AC8C29005B3250 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,10 +78,14 @@
 		C6F9E59221AC8C29005B3250 /* Food */ = {
 			isa = PBXGroup;
 			children = (
-				C6F7B51621BC207100F8BB00 /* Dish+CoreDataClass.swift */,
-				C6F7B51721BC207100F8BB00 /* Dish+CoreDataProperties.swift */,
-				C6F7B51821BC207100F8BB00 /* Provider+CoreDataClass.swift */,
-				C6F7B51921BC207100F8BB00 /* Provider+CoreDataProperties.swift */,
+				3F3A7B5F21BFE5DD00E47ED8 /* Inventory+CoreDataClass.swift */,
+				3F3A7B6021BFE5DD00E47ED8 /* Inventory+CoreDataProperties.swift */,
+				3F3A7B6121BFE5DD00E47ED8 /* Provider+CoreDataClass.swift */,
+				3F3A7B6221BFE5DD00E47ED8 /* Provider+CoreDataProperties.swift */,
+				3F3A7B6321BFE5DD00E47ED8 /* Order+CoreDataClass.swift */,
+				3F3A7B6421BFE5DD00E47ED8 /* Order+CoreDataProperties.swift */,
+				3F3A7B6521BFE5DD00E47ED8 /* Comment+CoreDataClass.swift */,
+				3F3A7B6621BFE5DD00E47ED8 /* Comment+CoreDataProperties.swift */,
 				C6F9E59321AC8C29005B3250 /* AppDelegate.swift */,
 				C6F9E59521AC8C29005B3250 /* ViewController.swift */,
 				3F9BF83821AD520D00B1E441 /* FoodListByTypeViewController.swift */,
@@ -159,15 +171,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F7B51A21BC207100F8BB00 /* Dish+CoreDataClass.swift in Sources */,
+				3F3A7B6C21BFE5DD00E47ED8 /* Order+CoreDataProperties.swift in Sources */,
 				3F9BF83921AD520D00B1E441 /* FoodListByTypeViewController.swift in Sources */,
+				3F3A7B6721BFE5DD00E47ED8 /* Inventory+CoreDataClass.swift in Sources */,
 				C6F9E59621AC8C29005B3250 /* ViewController.swift in Sources */,
-				C6F7B51B21BC207100F8BB00 /* Dish+CoreDataProperties.swift in Sources */,
+				3F3A7B6D21BFE5DD00E47ED8 /* Comment+CoreDataClass.swift in Sources */,
 				C6F9E59421AC8C29005B3250 /* AppDelegate.swift in Sources */,
+				3F3A7B6E21BFE5DD00E47ED8 /* Comment+CoreDataProperties.swift in Sources */,
 				3F4B4E0221B68C88009AFA71 /* ProviderViewController.swift in Sources */,
-				C6F7B51D21BC207100F8BB00 /* Provider+CoreDataProperties.swift in Sources */,
-				C6F7B51C21BC207100F8BB00 /* Provider+CoreDataClass.swift in Sources */,
+				3F3A7B6B21BFE5DD00E47ED8 /* Order+CoreDataClass.swift in Sources */,
 				C6F9E59C21AC8C29005B3250 /* Food.xcdatamodeld in Sources */,
+				3F3A7B6A21BFE5DD00E47ED8 /* Provider+CoreDataProperties.swift in Sources */,
+				3F3A7B6921BFE5DD00E47ED8 /* Provider+CoreDataClass.swift in Sources */,
+				3F3A7B6821BFE5DD00E47ED8 /* Inventory+CoreDataProperties.swift in Sources */,
 				C6F9E5A921AC93D6005B3250 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

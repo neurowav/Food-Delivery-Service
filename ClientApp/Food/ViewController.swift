@@ -39,9 +39,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = collectionView.indexPathsForSelectedItems?.first
         if segue.identifier == "FoodByTypeSegue" {
-            if let dest = segue.destination as? FoodListByTypeViewController {//,
-                //let index = sender as? IndexPath {
-                //dest.selection = collectionData[index.row]
+            if let dest = segue.destination as? FoodListByTypeViewController {
                 dest.collectionData = collectionData[cell!.row].foodList
             }
         }
@@ -59,9 +57,4 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource 
         }
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "DetailsSegue", sender: indexPath)
-//    }
-    
-    
 }

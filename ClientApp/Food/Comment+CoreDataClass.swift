@@ -1,5 +1,5 @@
 //
-//  Provider+CoreDataClass.swift
+//  Comment+CoreDataClass.swift
 //  Food
 //
 //  Created by student on 11.12.2018.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Provider)
-public class Provider: NSManagedObject {
+@objc(Comment)
+public class Comment: NSManagedObject {
 
 }

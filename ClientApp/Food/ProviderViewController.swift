@@ -13,36 +13,61 @@ class ProviderViewController: UIViewController {
     @IBOutlet private weak var collectionView : UICollectionView!
     @IBOutlet private weak var inputText : UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var cvHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var comments = ["Good provider, the pizza was awesome. Wait for another order", "Nice", "The best"]
-
+    var comments = ["Good provider, the pizza was awesome. Wait for another order", "Nice", "The best", "Wow", "Awesome", "Sick"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        inputText.becomeFirstResponder()
-        scrollView.contentSize = self.view.bounds.size
+        //scrollView.contentSize = self.view.bounds.size
         
-        //Listen for keyboard events
+        ListenKeyboardEvents()
+    
+        tableView.reloadData()
+        cvHeight.constant = tableView.contentSize.height
+        print(cvHeight.constant)
+    }
+    
+    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//
+//        for i in 0..<comments.count {
+//            let size = tableView.rectForRow(at: IndexPath(row: i, section: 0)).height
+//            print(size)
+//        }
+//        print("\(cvHeight.constant)")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+          cvHeight.constant = tableView.contentSize.height
+    }
+    
+    func ListenKeyboardEvents() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
-    
     deinit {
         //Stop listening for keyboard hide/show events
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: /*Notification.Name.UIKeyboardWillShow*/ UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: /*Notification.Name.UIKeyboardWillHide*/UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: /*Notification.Name.UIKeyboardWillChangeFrame*/UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @IBAction func sendButtonTaped(button : UIButton)
     {
-        print("The comment was sent")
-        inputText.resignFirstResponder()
-        comments.append(inputText.text!)
-        collectionView.reloadData()
-        inputText.text?.removeAll()
-        print(comments)
+        if inputText.text != "" {
+            print("The comment was sent")
+            inputText.resignFirstResponder()
+            comments.append(inputText.text!)
+            tableView.reloadData()
+            inputText.text?.removeAll()
+            cvHeight.constant = tableView.contentSize.height
+            print(comments)
+        }
     }
     
     @IBAction func endComment(_ sender: Any) {
@@ -50,13 +75,12 @@ class ProviderViewController: UIViewController {
     }
     
     @objc func keyboardWillChange(notification: Notification) {
-        //print("Keyboard will show: \(notification.name.rawValue)")
         
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+        guard let keyboardRect = (notification.userInfo?[/*UIKeyboardFrameEndUserInfoKey*/UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
         
-        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+        if notification.name == /*Notification.Name.UIKeyboardWillShow*/UIResponder.keyboardWillShowNotification || notification.name == /*Notification.Name.UIKeyboardWillChangeFrame*/UIResponder.keyboardWillChangeFrameNotification {
             view.frame.origin.y = -keyboardRect.height
         } else {
             view.frame.origin.y = 0
@@ -65,16 +89,27 @@ class ProviderViewController: UIViewController {
     }
     
 }
-extension ProviderViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
-        if let textView = cell.viewWithTag(100) as? UITextView {
-            textView.text = comments[indexPath.row]
-        }
-        return cell
-    }
+
+extension ProviderViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tvCell", for: indexPath) as! TvCell
+        cell.setupr(comments[indexPath.row])
+        return cell
+    }
+}
+
+class TvCell: UITableViewCell {
+    
+    @IBOutlet weak var label: UILabel!
+    
+    func setupr(_ text: String) {
+        label.text = text
+        //layoutIfNeeded()
+    }
+    
 }

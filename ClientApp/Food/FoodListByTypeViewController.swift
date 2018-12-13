@@ -23,7 +23,7 @@ class FoodListByTypeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailsViewSegue" {
             if let dest = segue.destination as? DetailsViewController,
-                let index = sender as? IndexPath {
+                let index = collectionView.indexPathsForSelectedItems?.first! {
                 dest.selection = collectionData[index.row]
             }
         }
