@@ -7,25 +7,24 @@ defmodule FoodService.Images do
   use Arc.Ecto.Definition
 
   # типы обработанных изображений
-  @versions [:resized, :preview, :tiny]
+  @versions [:resized]
 
   def transform(:resized, _) do
     {:convert, "-resize 1000x1000\> -format png", :png}
-  end
-
-  def transform(:preview, _) do
-    {:convert, "-thumbnail 1000x1000\> -format png", :png}
-  end
-
-  def transform(:tiny, _) do
-    {:convert, "-thumbnail 20x20^ -format png", :png}
   end
 
   def filename(version, {file, _scope}) do
     "#{file.file_name}_#{version}"
   end
 
-  def __storage, do: Arc.Storage.Local
+
+  def __storage(:test), do: Arc.Storage.Local
+  def __storage(:dev), do: Arc.Storage.Local
+  def __storage(:prod), do: Arc.Storage.S3
+
+  def __storage do
+    __storage(Mix.env())
+  end
 
   # NOTE: OMG
   def full_urls(args) do
@@ -37,10 +36,23 @@ defmodule FoodService.Images do
     nil
   end
 
-  def full_urls(args, _document),
+  def full_urls(args, _document) do
+    full_urls(args, _document, Mix.env())
+  end
+
+  def full_urls(args, _document, :test),
     do:
       args
       |> __MODULE__.urls()
       |> Enum.map(fn {k, v} -> {k, FoodServiceWeb.Endpoint.url() <> v} end)
       |> Map.new()
+
+  def full_urls(args, _document, :dev),
+    do:
+      args
+      |> __MODULE__.urls()
+      |> Enum.map(fn {k, v} -> {k, FoodServiceWeb.Endpoint.url() <> v} end)
+      |> Map.new()
+
+  def full_urls(args, _document, :prod), do: __MODULE__.urls(args)
 end

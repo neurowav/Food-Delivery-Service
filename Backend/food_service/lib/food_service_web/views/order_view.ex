@@ -1,6 +1,7 @@
 defmodule FoodServiceWeb.OrderView do
   use FoodServiceWeb, :view
   alias FoodServiceWeb.OrderView
+  alias FoodServiceWeb.InventoryView
 
   def render("index.json", %{orders: orders}) do
     %{
@@ -12,7 +13,7 @@ defmodule FoodServiceWeb.OrderView do
     %{
       id: order.id,
       user_id: order.user_id,
-      inventory_id: order.inventory_id,
+      inventories: render_many(order.inventories, InventoryView, "inventory.json"),
       status: order.status
     }
   end

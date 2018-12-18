@@ -4,11 +4,11 @@ defmodule FoodService.Orders.Order do
 
   alias FoodService.Orders
 
-  @required [:inventory_id, :user_id, :status]
+  @required [:user_id, :status]
   @optional []
 
   schema "orders" do
-    belongs_to :inventory, Orders.Inventory
+    many_to_many :inventories, Orders.Inventory, on_replace: :delete, join_through: Orders.OrderInventory
     belongs_to :user, FoodService.Accounts.User
     field :status, OrdersEnum, default: 0
 
@@ -20,7 +20,7 @@ defmodule FoodService.Orders.Order do
     order
     |> cast(attrs, @required ++ @optional)
     |> validate_required(@required)
-    |> assoc_constraint(:inventory)
     |> assoc_constraint(:user)
+    |> cast_assoc(:inventories)
   end
 end

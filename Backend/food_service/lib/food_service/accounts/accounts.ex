@@ -8,6 +8,13 @@ defmodule FoodService.Accounts do
     Repo.all(User)
   end
 
+  def get_last_user do
+    q = from p in User,
+        limit: 1,
+        order_by: [desc: :inserted_at]
+    Repo.one q
+  end
+
   def current_user(conn),
     do: conn |> Guardian.Plug.current_resource() |> Repo.preload(preload_list())
 
@@ -44,41 +51,6 @@ defmodule FoodService.Accounts do
 
   def change_user(%User{} = user) do
     User.changeset(user, %{})
-  end
-
-  def list_sessions(user_id) do
-    with user when is_map(user) <- Repo.get(User, user_id), do: user.sessions
-  end
-
-  def add_session(%User{sessions: sessions} = user, session_id, timestamp) do
-    user
-    |> change(sessions: put_in(sessions, [session_id], timestamp))
-    |> Repo.update()
-  end
-
-  def delete_session(%User{sessions: sessions} = user, session_id) do
-    user
-    |> change(sessions: Map.delete(sessions, session_id))
-    |> Repo.update()
-  end
-
-  def remove_old_sessions(session_age) do
-    now = System.system_time(:second)
-
-    Enum.map(
-      list_users(),
-      &(&1
-        |> change(
-          sessions:
-            :maps.filter(
-              fn _, time ->
-                time + session_age > now
-              end,
-              &1.sessions
-            )
-        )
-        |> Repo.update())
-    )
   end
 
   def preload_list() do

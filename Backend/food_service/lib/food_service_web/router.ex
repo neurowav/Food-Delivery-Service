@@ -33,8 +33,12 @@ defmodule FoodServiceWeb.Router do
   scope "/", FoodServiceWeb do
     pipe_through [:api] #, :user_auth, :ensure_auth]
 
+    resources "/provider", ProviderController, only: [] do
+      resources "/comment", CommentController, only: [:index, :create]
+    end
     resources "/inventory", InventoryController, only: [:index]
-    resources "/orders", OrderController, only: [:index, :create, :update]
+    post "/orders/delete", OrderController, :delete
+    resources "/orders", OrderController, only: [:index, :create, :update, :show]
     get "/", PageController, :index
   end
 

@@ -5,13 +5,16 @@ defmodule FoodService.Orders.Inventory do
   alias FoodService.Orders.Inventory
 
   @required [:name, :amount]
-  @optional [:description]
+  @optional [:detail, :type, :hotcold]
 
   schema "inventories" do
     has_one :photo, FoodService.Files.Photo, foreign_key: :owner_id
     field :name, :string
     field :amount, :float
-    field :description, :string
+    field :detail, :string
+    field :type, InventoryEnum
+    field :hotcold, :boolean
+    many_to_many :orders, FoodService.Orders.Order, join_through: Orders.OrderInventory
 
     timestamps()
   end

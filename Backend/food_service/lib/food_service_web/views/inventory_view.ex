@@ -13,8 +13,10 @@ defmodule FoodServiceWeb.InventoryView do
       id: inventory.id,
       name: inventory.name,
       amount: inventory.amount,
-      description: inventory.description,
-      photo: render_one(inventory.photo, PhotoView, "photo.json")
+      detail: inventory.detail,
+      type: inventory.type,
+      hotcold: inventory.hotcold,
+      photo: FoodService.Images.full_urls({inventory.photo.file, inventory.photo})[:resized]
     }
   end
 end
