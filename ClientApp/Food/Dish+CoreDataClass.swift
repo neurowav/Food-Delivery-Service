@@ -1,5 +1,5 @@
 //
-//  Inventory+CoreDataClass.swift
+//  Dish+CoreDataClass.swift
 //  Food
 //
 //  Created by Misha on 17/12/2018.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Inventory)
-public class Inventory: NSManagedObject {
+@objc(Dish)
+public class Dish: NSManagedObject {
 
 }

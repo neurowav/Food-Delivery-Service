@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Comment" representedClassName="Comment" syncable="YES">
-        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="Inventory" representedClassName="Inventory" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hotcold" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="inventprov" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Provider" syncable="YES"/>
-    </entity>
-    <entity name="Order" representedClassName="Order" syncable="YES">
-        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="orderdish" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Inventory" syncable="YES"/>
-    </entity>
-    <entity name="Provider" representedClassName="Provider" syncable="YES">
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="site" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="provcomment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Inventory" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Provider" positionX="-54" positionY="18" width="128" height="120"/>
-        <element name="Comment" positionX="-54" positionY="27" width="128" height="60"/>
-        <element name="Order" positionX="-36" positionY="54" width="128" height="75"/>
+        <element name="Inventory" positionX="-63" positionY="9" width="128" height="150"/>
     </elements>
 </model>

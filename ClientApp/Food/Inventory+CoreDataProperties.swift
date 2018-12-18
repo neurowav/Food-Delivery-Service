@@ -2,7 +2,7 @@
 //  Inventory+CoreDataProperties.swift
 //  Food
 //
-//  Created by student on 11.12.2018.
+//  Created by student on 18.12.2018.
 //  Copyright © 2018 sfedu. All rights reserved.
 //
 //
@@ -17,11 +17,12 @@ extension Inventory {
         return NSFetchRequest<Inventory>(entityName: "Inventory")
     }
 
+    @NSManaged public var amount: Float
+    @NSManaged public var detail: String?
     @NSManaged public var hotcold: Bool
     @NSManaged public var name: String?
-    @NSManaged public var amount: Float
     @NSManaged public var type: String?
-    @NSManaged public var descr: String?
-    @NSManaged public var inventprov: Provider?
+    @NSManaged public var photo: String?
+    @NSManaged public var id: Int64
 
 }

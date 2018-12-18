@@ -2,7 +2,7 @@
 //  Inventory+CoreDataClass.swift
 //  Food
 //
-//  Created by Misha on 17/12/2018.
+//  Created by student on 18.12.2018.
 //  Copyright © 2018 sfedu. All rights reserved.
 //
 //
